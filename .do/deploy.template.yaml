@@ -21,8 +21,7 @@ spec:
           value: "3001"
     - environment_slug: node-js
       name: frontend
-      source:
-        type: github
+      git:
         repo: mimsou/growthai_front_end
         branch: master
 
