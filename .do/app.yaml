@@ -2,8 +2,7 @@ name: growthai-app
 services:
   - environment_slug: node-js
     name: backend
-    source:
-      type: github
+    git:
       repo: mimsou/growthai_back_end
       branch: master
     
