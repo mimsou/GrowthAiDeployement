@@ -1,11 +1,12 @@
 name: growthai-app
 services:
-  - name: backend
+  - environment_slug: node-js
+    name: backend
     source:
       type: github
       repo: mimsou/growthai_back_end
       branch: master
-    environment_slug: node-js
+    
     build_command: npm install && npm run build
     run_command: npm run start:prod
     http_port: 3001
@@ -18,13 +19,13 @@ services:
         value: your-database-url
       - key: PORT
         value: "3001"
-
-  - name: frontend
+  - environment_slug: node-js
+    name: frontend
     source:
       type: github
       repo: mimsou/growthai_front_end
       branch: master
-    environment_slug: node-js
+
     build_command: npm install && npm run build
     run_command: npx serve -s build
     http_port: 3000
