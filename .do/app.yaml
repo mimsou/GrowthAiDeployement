@@ -1,5 +1,5 @@
 name: growthai-app
-services:
+components:
   - name: backend
     source:
       type: github
