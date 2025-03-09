@@ -1,0 +1,37 @@
+name: growthai-app
+services:
+  - name: backend
+    github:
+      branch: master
+      repo: mimsou/growthai_back_end
+    environment_slug: node-js
+    build_command: npm install && npm run build
+    run_command: npm run start:prod
+    http_port: 3001
+    instance_count: 1
+    instance_size_slug: basic-xs
+    routes:
+      - path: /api
+    envs:
+      - key: NODE_ENV
+        value: production
+      - key: DATABASE_URL
+        value: your-database-url
+      - key: PORT
+        value: "3001"
+
+  - name: frontend
+    github:
+      branch: master
+      repo: mimsou/growthai_front_end
+    environment_slug: node-js
+    build_command: npm install && npm run build
+    run_command: npx serve -s build
+    http_port: 3000
+    instance_count: 1
+    instance_size_slug: basic-xs
+    routes:
+      - path: /
+    envs:
+      - key: REACT_APP_API_URL
+        value: https://api.mydomain.com
