@@ -1,4 +1,3 @@
-name: growthai-app
 services:
   - environment_slug: node-js
     name: backend
