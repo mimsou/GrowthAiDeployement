@@ -3,7 +3,7 @@ services:
   - environment_slug: node-js
     name: backend
     git:
-      repo_clone_url: https://github.com/mimsou/growthai_back_end.git
+      repo: mimsou/growthai_back_end
       branch: master
     
     build_command: npm install && npm run build
@@ -21,7 +21,7 @@ services:
   - environment_slug: node-js
     name: frontend
     git:
-      repo_clone_url: https://github.com/mimsou/growthai_front_end.git
+      repo:  mimsou/growthai_front_end
       branch: master
 
     build_command: npm install && npm run build
