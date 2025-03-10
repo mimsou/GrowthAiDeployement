@@ -7,7 +7,7 @@ spec:
         repo_clone_url: https://github.com/mimsou/growthai_back_end.git
         branch: master
       
-      build_command: npm install && npm run build
+      build_command: npm install && npm install --save-dev @nestjs/cli && npm run build
       run_command: npm run start:prod
       http_port: 3001
       routes:
